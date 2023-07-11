@@ -1,22 +1,41 @@
-import React from "react";
-import {IPos} from "../../models";
+import React, {useEffect, useState} from "react";
+import {IWord} from "../../models";
+import {useLocation} from "react-router-dom";
 import {Definition} from "./Definition";
 
-interface PosProps {
-	pos: IPos
+interface LocationState {
+	from: {
+		pathname: string;
+	};
 }
 
-
-export const PartOfSpeech = ({pos}: PosProps) => {
+export const PartOfSpeech = () => {
+	
+	
+	const location = useLocation();
+	const [word, setWord] = useState<IWord>()
+	
+	
+	useEffect(() => {
+		// Access the state passed from the previous screen
+		const state: IWord = location.state as IWord;
+		
+		setWord(state)
+		
+		
+		console.log(state);
+	}, [location.state]);
 	
 	return (
 		<div className="mb-4 flex">
 			<div className="w-4/6">
 				<div
-					className="rounded-full w-10 h-10 bg-indigo-500 font-bold flex justify-center items-center text-center mb-2">{pos.pos}
+					className="rounded-full w-10 h-10 bg-indigo-500 font-bold flex justify-center items-center text-center mb-2">
+					{word?.parts[0].name}
 				</div>
 				<div className="px-3 py-3 rounded-lg bg-indigo-400">
-					{pos.definitions.map((def, index) => <Definition def={def} key={index}/>)}
+					{word?.parts[0].definitions.map((def, index) =>
+						<Definition def={def} key={index}/>)}
 				</div>
 			</div>
 			

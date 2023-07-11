@@ -1,16 +1,29 @@
 import React from 'react'
-import {IPos} from "../../models";
+import {IPos, IWord} from "../../models";
 import {PartOfSpeech} from "./PartOfSpeech";
 import {poss} from "../../data/products";
+import {useNavigate} from "react-router-dom";
 
+export interface Word {
+	word: IWord
+}
 
-export function FoundWord() {
+export function FoundWord({word}: Word) {
+	
+	const navigate = useNavigate();
+	
 	
 	return (
-		<div className="py-6 px-6 mb-2 border rounded-2xl bg-blue-100">
-			<div>
-				{poss.map((pos, index) => <PartOfSpeech pos={pos} key={index}/>)}
-			</div>
-		</div>
+		<>
+			<button
+				className="py-2 px-4 mb-2 w-2/6 border rounded-2xl text-2xl bg-green-100 hover:text-blue-300 text-left"
+				// onClick={() => console.log('go to ' + word.name)}
+				onClick={() => navigate(`pos`, {state: word})}
+			>
+				{word.name}
+			</button>
+		</>
+	
+	
 	)
 }

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {FoundWord} from "../components/word/FoundWord";
+import {WordList} from "../components/word/WordList";
 
 export interface SearchWordProps {
 	integer: number

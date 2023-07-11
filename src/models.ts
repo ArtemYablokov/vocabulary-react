@@ -13,23 +13,27 @@ export interface IProduct {
 
 export interface IWord {
 	name: string
-	partOfSpeeches: IPos[]
+	parts: IPos[]
 }
 
 export interface IPos {
-	pos: string
+	name: string
 	definitions: IDefinition[]
-	synonyms?: string[]
-	antonyms?: string[]
-	rusSynonyms?: string[]
-	rusAntonyms?: string[]
+	synonyms?: StringHolder[]
+	antonyms?: StringHolder[]
+	rusSynonyms?: StringHolder[]
+	rusAntonyms?: StringHolder[]
 }
 
 export interface IDefinition {
-	val: string
+	name: string
 	phrases: IPhrase[]
 }
 
 export interface IPhrase {
-	val: string
+	name: string
+}
+
+export interface StringHolder {
+	name: string
 }
