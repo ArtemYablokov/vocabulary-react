@@ -19,8 +19,8 @@ export interface IWord {
 export interface IPos {
 	name: string
 	definitions: IDefinition[]
-	synonyms?: StringHolder[]
-	antonyms?: StringHolder[]
+	synonyms: StringHolder[]
+	antonyms: StringHolder[]
 	rusSynonyms?: StringHolder[]
 	rusAntonyms?: StringHolder[]
 }

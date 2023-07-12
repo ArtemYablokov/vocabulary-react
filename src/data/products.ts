@@ -26,20 +26,3 @@ export const products: IProduct[] = [
 		}
 	}
 ]
-
-export const poss: IPos[] = [
-	{
-		name: "N",
-		definitions: [
-			{name: "def1", phrases: [{name: "phrase 1"}, {name: "phrase 2"}]},
-			{name: "def2", phrases: [{name: "phrase 3"}, {name: "phrase 4"}]}
-		]
-	},
-	{
-		name: "N",
-		definitions: [
-			{name: "def1", phrases: [{name: "phrase 1"}, {name: "phrase 2"}]},
-			{name: "def2", phrases: [{name: "phrase 3"}, {name: "phrase 4"}]}
-		]
-	},
-]
