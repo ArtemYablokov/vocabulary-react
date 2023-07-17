@@ -6,10 +6,9 @@ export interface Word {
 	word: IWord
 }
 
-export function FoundWord({word}: Word) {
+export const FoundWord = ({word}: Word) => {
 	
 	const navigate = useNavigate();
-	
 	
 	return (
 		<>
@@ -19,7 +18,5 @@ export function FoundWord({word}: Word) {
 				{word.name}
 			</button>
 		</>
-	
-	
 	)
 }

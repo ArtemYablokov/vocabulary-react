@@ -14,6 +14,7 @@ function App() {
 				<Route path="/" element={<SearchPage/>}/>
 				
 				<Route path="/word" element={<Word/>}/>
+				<Route path="/create" element={<Word/>}/>
 			</Routes>
 		</>
 	)
