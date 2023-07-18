@@ -1,16 +1,6 @@
 import React, {useState} from 'react'
-import {WordList} from "../components/word/WordList";
 
-export interface SearchWordProps {
-	integer: number
-}
-
-// as example of FLEXES
-export const NavBar = () => {
-	
-	const [searchWord, setSearchWord] = useState('')
-	
-	console.log(searchWord)
+export const FlexExample = () => {
 	
 	return (
 		<>
@@ -19,7 +9,7 @@ export const NavBar = () => {
 				<div>TWO</div>
 			</div>
 			
-			<div style={{ display: 'flex', lineHeight : 10, padding: 20 }}>
+			<div style={{display: 'flex', lineHeight: 10, padding: 20}}>
 				<div className="py-4 px-6 m-2 border rounded-sm bg-blue-100">
 				
 				</div>
