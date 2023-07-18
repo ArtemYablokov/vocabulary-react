@@ -12,6 +12,7 @@ export interface IProduct {
 }
 
 export interface IWord {
+	id?: number
 	name: string
 	parts: IPos[]
 }

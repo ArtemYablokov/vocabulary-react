@@ -1,30 +1,15 @@
-import React, {ChangeEvent, useEffect, useState} from 'react'
-import {useLocation} from "react-router-dom";
+import React, {ChangeEvent, useState} from 'react'
 import {IWord} from "../../models";
 import {PartOfSpeech} from "./PartOfSpeech";
 import {TextInput} from "../TextInput";
 
-export function Word() {
+export interface WordProps {
+	wordInit: IWord
+}
+
+export function Word({wordInit}: WordProps) {
 	
-	const location = useLocation();
-	const [word, setWord] = useState<IWord>({
-		name: "",
-		parts: [{
-			name: "",
-			definitions: [],
-			synonyms: [],
-			antonyms: []
-		}]
-	})
-	
-	useEffect(() => {
-		const state: IWord = location.state as IWord;
-		if (state) {
-			setWord(state)
-			console.log(state);
-		}
-	}, [location.state]);
-	
+	const [word, setWord] = useState<IWord>(wordInit)
 	
 	const changeWord = (e: ChangeEvent<HTMLInputElement>) => {
 		setWord((prev) => ({

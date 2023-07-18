@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {WordList} from "../components/word/WordList";
-import {useWords} from "../hooks/words";
+import {useWord} from "../hooks/words";
 
 export interface SearchWordProps {
 	variablelll: number
@@ -12,7 +12,7 @@ export const SearchPage = () => {
 	
 	const {
 		words, fetchWords, error, loading
-	} = useWords()
+	} = useWord()
 	
 	
 	return (
