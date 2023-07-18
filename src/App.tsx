@@ -3,7 +3,7 @@ import {ProductsPage} from './pages/ProductsPage'
 import {SearchPage} from './pages/SearchPage'
 import {Navigation} from './components/Navigation'
 import React from "react";
-import {PagePhonesForm} from "./components/BaseWordForm";
+import {BaseWordForm} from "./components/wordform/BaseWordForm";
 
 function App() {
 	return (
@@ -13,8 +13,8 @@ function App() {
 				<Route path="/product" element={<ProductsPage/>}/>
 				<Route path="/" element={<SearchPage/>}/>
 				
-				<Route path="/update/:wordId" element={<PagePhonesForm/>}/>
-				<Route path="/create" element={<PagePhonesForm/>}/>
+				<Route path="/update/:wordId" element={<BaseWordForm/>}/>
+				<Route path="/create" element={<BaseWordForm/>}/>
 			</Routes>
 		</>
 	)
