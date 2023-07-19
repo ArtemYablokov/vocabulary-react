@@ -39,26 +39,34 @@ export const PartOfSpeech = ({pos}: PartProps) => {
 		<div className="mb-4 flex">
 			<div className=" w-4/6">
 				
-				{/*<TextInput val={partOfSpeech.name} onChange={changePos} />*/}
+				<input
+					className="py-1 px-3 w-2/6 text-2xl flex flex-col align-baseline w-full rounded-lg border-2 border-sky-300 bg-white"
+					type="text"
+					id="word"
+					placeholder="Part Of Speech"
+					value={partOfSpeech.name}
+					onChange={changePos}
+				/>
+				
 				<div
 					className="rounded-full w-10 h-10 bg-indigo-500 font-bold flex justify-center items-center text-center mb-2">
 					{partOfSpeech.name}
 				</div>
 				
-				<div className="px-3 py-3 rounded-lg bg-indigo-400 w-full">
+				<div className="px-3 py-3 rounded-lg bg-indigo-300 w-full">
 					{pos.definitions.map((def, index) =>
 						<Definition def={def} key={index}/>)}
 				</div>
 			</div>
 			
-			<div className="w-1/6 ml-6 py-2 px-2 rounded-lg bg-indigo-300 border-indigo-500 border-2">
+			<div className="w-1/6 ml-6 py-2 px-2 h-fit rounded-lg bg-indigo-300 ">
 				{pos.synonyms.map((syn, index) =>
-					<SynOrAnt stringHolder={syn}/>
+					<SynOrAnt stringHolder={syn} key = {index}/>
 				)}
 			</div>
-			<div className="w-1/6 ml-6 py-2 px-2 rounded-lg bg-indigo-300 border-indigo-500 border-2">
+			<div className="w-1/6 ml-6 py-2 px-2 h-fit rounded-lg bg-indigo-300 border-indigo-500 border-2">
 				{pos.antonyms.map((ant, index) =>
-					<SynOrAnt stringHolder={ant}/>
+					<SynOrAnt stringHolder={ant} key = {index}/>
 				)}
 			</div>
 		</div>

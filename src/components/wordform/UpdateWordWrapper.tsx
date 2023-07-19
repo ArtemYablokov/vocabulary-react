@@ -14,8 +14,6 @@ export function UpdateWordWrapper({wordId}: UpdateWordProps) {
 	const [err, setErr] = useState<string>()
 	
 	React.useEffect(() => {
-		debugger
-		console.log(word)
 		getWordById(wordId)
 			.then((data) => {
 				setWord(data)
@@ -24,7 +22,6 @@ export function UpdateWordWrapper({wordId}: UpdateWordProps) {
 				console.error('Error:', error);
 				setErr(error)
 			});
-		console.log(word)
 	}, [wordId])
 	
 	

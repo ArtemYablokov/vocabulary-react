@@ -18,8 +18,8 @@ export const Phrase = ({phraseI}: PhraseProps) => {
 	};
 	
 	return (
-		<div className="py-2 px-2 mb-3 bg-white border-2 border-sky-100 rounded-lg">
-			<TextInput val={phrase.name} onChange={changePhrase}/>
+		<div className="mb-1">
+			<TextInput val={phrase.name} placeHolder={'Phrase'} onChange={changePhrase}/>
 		</div>
 	)
 }

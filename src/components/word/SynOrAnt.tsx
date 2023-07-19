@@ -20,7 +20,7 @@ export const SynOrAnt = ({stringHolder}: SynOrAntProps) => {
 	
 	return (
 		<div className="mb-2">
-			<TextInput val={synOrAnt.name} onChange={changeSynOrAnt}/>
+			<TextInput val={synOrAnt.name} placeHolder={'SynOrAnt'} onChange={changeSynOrAnt}/>
 		</div>
 	)
 }

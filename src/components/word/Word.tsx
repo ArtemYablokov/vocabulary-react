@@ -21,11 +21,11 @@ export function Word({wordInit}: WordProps) {
 	return (
 		<div className="py-6 px-6 mb-2 border bg-blue-50 WORD">
 			<div className="py-2 w-2/6 px-6 mb-5 border bg-blue-200 rounded-lg">
-				<TextInput val={word.name} onChange={changeWord}/>
+				<TextInput val={word.name} placeHolder={'Word'} onChange={changeWord}/>
 			</div>
 			
 			{word?.parts.map((pos, index) =>
-				<PartOfSpeech pos={pos}/>)}
+				<PartOfSpeech pos={pos} key = {index}/>)}
 		</div>
 	)
 }

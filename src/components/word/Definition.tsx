@@ -19,9 +19,9 @@ export const Definition = ({def}: DefProps) => {
 	};
 	
 	return (
-		<div className="py-2 px-2 mb-1 rounded-lg bg-indigo-300">
+		<div className="py-2 px-2 mb-3 rounded-lg bg-indigo-200">
 			<div className="mb-1">
-				<TextInput val={definition.name} onChange={changeDefinition}/>
+				<TextInput val={definition.name} placeHolder={'Definition'} onChange={changeDefinition}/>
 			</div>
 			<div className=" pl-4 pr-2 flex flex-col align-baseline rounded-lg">
 				{def.phrases.map((phrase, index) =>

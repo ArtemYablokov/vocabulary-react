@@ -15,8 +15,6 @@ export function useWord() {
 		}]
 	};
 	const [word, setWord] = useState<IWord>(emptyWord)
-	// const [search, setSearch] = useState('')
-	
 	
 	const [loading, setLoading] = useState(false)
 	const [error, setError] = useState('')
@@ -25,16 +23,16 @@ export function useWord() {
 	const findByIdUrl = 'http://localhost:8080/word/';
 	
 	
-	async function fetchWords(preifx: string) {
+	async function fetchWords(prefix: string) {
 		try {
-			if (preifx === '') {
+			if (prefix === '') {
 				setWords([])
 				return
 			}
 			setError('')
 			setLoading(true)
-			console.log('searc prefix = ' + preifx)
-			const response = await axios.get<IWord[]>(url + preifx)
+			console.log('searc prefix = ' + prefix)
+			const response = await axios.get<IWord[]>(url + prefix)
 			
 			setWords(response.data)
 			
