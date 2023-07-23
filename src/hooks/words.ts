@@ -24,6 +24,7 @@ export function useWord() {
 	
 	
 	async function fetchWords(prefix: string) {
+		debugger
 		try {
 			if (prefix === '') {
 				setWords([])
@@ -61,5 +62,14 @@ export function useWord() {
 		}
 	}
 	
-	return {words, fetchWords, word, fetchWord, error, loading}
+	async function saveWord(word: IWord) {
+		try {
+			debugger
+			console.log(word)
+		} catch (e: unknown) {
+			const error = e as AxiosError
+		}
+	}
+	
+	return {words, fetchWords, error, loading, saveWord}
 }

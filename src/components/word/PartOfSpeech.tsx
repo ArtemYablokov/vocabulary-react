@@ -1,14 +1,15 @@
 import React, {ChangeEvent, useState} from "react";
-import {IDefinition, IPos} from "../../models";
+import {IDefinition, IPos, IWord} from "../../models";
 import {Definition} from "./Definition";
 import {SynOrAnt} from "./SynOrAnt";
 
 
 interface PartProps {
 	pos: IPos
+	change: (arg0 : IPos) => void;
 }
 
-export const PartOfSpeech = ({pos}: PartProps) => {
+export const PartOfSpeech = ({pos, change}: PartProps) => {
 	
 	const [partOfSpeech, setPartOfSpeech] = useState<IPos>(pos)
 	
@@ -29,10 +30,13 @@ export const PartOfSpeech = ({pos}: PartProps) => {
 	}
 	
 	const changePos = (e: ChangeEvent<HTMLInputElement>) => {
+		const value : string = e.target.value;
 		setPartOfSpeech((prev) => ({
 			...prev,
-			name: e.target.value
+			name: value
 		}));
+		partOfSpeech.name = value
+		change(partOfSpeech)
 	};
 	
 	return (

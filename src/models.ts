@@ -18,6 +18,7 @@ export interface IWord {
 }
 
 export interface IPos {
+	id?: number
 	name: string
 	definitions: IDefinition[]
 	synonyms: StringHolder[]
