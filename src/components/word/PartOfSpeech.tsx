@@ -1,5 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
-import {IDefinition, IPos, IWord} from "../../models";
+import {IDefinition, IPos} from "../../models";
 import {Definition} from "./Definition";
 import {SynOrAnt} from "./SynOrAnt";
 
@@ -30,12 +30,15 @@ export const PartOfSpeech = ({pos, change}: PartProps) => {
 	}
 	
 	const changePos = (e: ChangeEvent<HTMLInputElement>) => {
-		const value : string = e.target.value;
-		setPartOfSpeech((prev) => ({
-			...prev,
-			name: value
-		}));
-		partOfSpeech.name = value
+		// setPartOfSpeech((prev) => ({
+		// 	...prev,
+		// 	name: e.target.value
+		// }));
+		
+		// MANUAL works
+		// SET - not
+		partOfSpeech.name = e.target.value
+		
 		change(partOfSpeech)
 	};
 	

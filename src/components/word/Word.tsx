@@ -1,8 +1,8 @@
 import React, {ChangeEvent, useState} from 'react'
 import {IPos, IWord} from "../../models";
-import {PartOfSpeech} from "./PartOfSpeech";
 import {TextInput} from "../TextInput";
 import {useWord} from "../../hooks/words";
+import {Parts} from "./Parts";
 
 export interface WordProps {
 	wordInit: IWord
@@ -21,14 +21,20 @@ export function Word({wordInit}: WordProps) {
 		}));
 	};
 	
-
-	
-	const changePos = (p : IPos, index : number) => {
-		// word.parts.filter(p => p.id === id)
-		debugger
-		word.parts[index] = p;
-		setWord(word);
+	const changeParts = (updatedParts: IPos[]) => {
+		setWord((prev) => ({
+			...prev,
+			parts: updatedParts
+		}));
 	};
+	
+	
+	// const changePos = (p : IPos, index : number) => {
+	// 	// word.parts.filter(p => p.id === id)
+	// 	debugger
+	// 	word.parts[index] = p;
+	// 	setWord(word);
+	// };
 	
 	return (
 		<div className="py-6 px-6 mb-2 border bg-blue-50 WORD">
@@ -36,8 +42,7 @@ export function Word({wordInit}: WordProps) {
 				<TextInput val={word.name} placeHolder={'Word'} onChange={changeWord}/>
 			</div>
 			
-			{word?.parts.map((pos, index) =>
-				<PartOfSpeech pos={pos} change={(e) => changePos(e, index)} key={index}/>)}
+			<Parts partsInit={word.parts} changePos={changeParts}/>
 			
 			<button
 				className="py-2 px-4 mb-2  border rounded-3xl text-2xl text-purple-50 hover:text-indigo-700 bg-blue-400"
