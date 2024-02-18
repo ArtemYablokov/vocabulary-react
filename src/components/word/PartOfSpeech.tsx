@@ -29,7 +29,7 @@ export const PartOfSpeech = ({pos, change}: PartProps) => {
 		partOfSpeech.antonyms.filter(ant => ant.name !== antonym)
 	}
 	
-	const changePos = (e: ChangeEvent<HTMLInputElement>) => {
+	const changeName = (e: ChangeEvent<HTMLInputElement>) => {
 		// setPartOfSpeech((prev) => ({
 		// 	...prev,
 		// 	name: e.target.value
@@ -42,6 +42,12 @@ export const PartOfSpeech = ({pos, change}: PartProps) => {
 		change(partOfSpeech)
 	};
 	
+	const changeField = (value: any, fieldName: string) => {
+		if (fieldName === 'synonyms' || fieldName === 'antonyms' || fieldName === 'definitions') {
+			partOfSpeech[fieldName] = value
+		}
+	};
+	
 	return (
 		<div className="mb-4 flex">
 			<div className=" w-4/6">
@@ -52,7 +58,7 @@ export const PartOfSpeech = ({pos, change}: PartProps) => {
 					id="word"
 					placeholder="Part Of Speech"
 					value={partOfSpeech.name}
-					onChange={changePos}
+					onChange={changeName}
 				/>
 				
 				<div

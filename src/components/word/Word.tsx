@@ -28,6 +28,13 @@ export function Word({wordInit}: WordProps) {
 		}));
 	};
 	
+	const changeField = (value: any, fieldName: string) => {
+		// const newWord: IWord = word
+		if (fieldName === 'parts') {
+			word[fieldName] = value
+		}
+	};
+	
 	
 	// const changePos = (p : IPos, index : number) => {
 	// 	// word.parts.filter(p => p.id === id)
@@ -39,10 +46,12 @@ export function Word({wordInit}: WordProps) {
 	return (
 		<div className="py-6 px-6 mb-2 border bg-blue-50 WORD">
 			<div className="py-2 w-2/6 px-6 mb-5 border bg-blue-200 rounded-lg">
-				<TextInput val={word.name} placeHolder={'Word'} onChange={changeWord}/>
+				<TextInput val={word.name} placeHolder={'Word value'} onChange={changeWord}/>
 			</div>
 			
 			<Parts partsInit={word.parts} changePos={changeParts}/>
+			{/*<Parts partsInit={word.parts} changePos={(val) => changeField(val, 'parts')}/>*/}
+			{/*<Parts partsInit={word.parts} changePos={(val) => changeField(val, 'parts')}/>*/}
 			
 			<button
 				className="py-2 px-4 mb-2  border rounded-3xl text-2xl text-purple-50 hover:text-indigo-700 bg-blue-400"

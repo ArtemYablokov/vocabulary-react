@@ -37,5 +37,6 @@ export interface IPhrase {
 }
 
 export interface StringHolder {
+	id?: number
 	name: string
 }

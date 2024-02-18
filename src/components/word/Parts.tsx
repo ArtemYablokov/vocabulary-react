@@ -22,10 +22,9 @@ export function Parts({partsInit, changePos}: PartsInterface) {
 		
 		// MANUAL works
 		// SET - not
-		// parts[id] = updatedPart
+		parts[id] = updatedPart
 
-		//  попробовать вернуть newParts вместо parts
-		changePos(newParts)
+		changePos(parts)
 	};
 	
 	return (
