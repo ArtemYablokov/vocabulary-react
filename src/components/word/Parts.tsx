@@ -20,11 +20,11 @@ export function Parts({partsInit, changePos}: PartsInterface) {
 		});
 		setParts(newParts)
 		
-		// MANUAL works
-		// SET - not
+		// here state and update state works
+		
+		// MANUAL ? try ?
 		// parts[id] = updatedPart
-
-		//  попробовать вернуть newParts вместо parts
+		
 		changePos(newParts)
 	};
 	
@@ -32,7 +32,8 @@ export function Parts({partsInit, changePos}: PartsInterface) {
 		<div>
 			
 			{parts.map((pos, index) =>
-				<PartOfSpeech pos={pos} change={(updatedPart) => handlePartUpdate(index, updatedPart)} key={index}/>)}
+				<PartOfSpeech partOfSpeech={pos} change={(updatedPart) => handlePartUpdate(index, updatedPart)}
+							  key={index}/>)}
 		
 		</div>
 	)
